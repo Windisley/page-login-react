@@ -14,7 +14,7 @@
 }
 
 .container .boxrelative{
-    width: 100%;
+    width: 90%;
     max-width: 600px;
     margin: 0 auto;
     min-height: 250px;
@@ -96,9 +96,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #222;
+    background-color: #0E2938;
     z-index: -1;
-    transition: all .7s ease-in-out;
+    transition: all .5s ease-in-out;
 
 
   }
@@ -119,8 +119,9 @@
  top: 50%;
  left: 20%;
  transform: translate(-50%, -50%);
- background-color: #333;
- z-index: 5;
+ background-color: #285B78;
+ z-index: 10;
+ transition: .5s ease-in-out;
   }
 
   .form .boxcontentform{
@@ -155,19 +156,27 @@
   }
 
   .form .boxinput label{
-   color: #aaa;
+   color: #002678;
+
    text-transform: capitalize;
  }
 
  .form .boxinput input{
-    border: 1px solid #aaa;
-    height: 0px;
+    border: 0px solid transparent;
+    background-color: #004C78;
+    height: 1px;
     transition: all .5s ease-in-out;
+    color: transparent;
+    
 
   }
 
   .form .boxinput input:focus{
     height: 100%;
+    border: 1px solid #004C78;
+    padding: 3px;
+    color: white;
+    
   }
 
   .form .boxcontentform button{
@@ -193,9 +202,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #222;
+    background-color: #0E2938;
     z-index: -1;
-    transition: all .7s ease-in-out;
+    transition: all .5s ease-in-out;
     
   }
 

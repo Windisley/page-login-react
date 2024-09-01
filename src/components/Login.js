@@ -1,11 +1,31 @@
 import Styles from '../components/Login.module.css'
-import useState from 'react'
+import {useState} from 'react'
 
 function Login() {
+    
     function clickbutton(e){
         e.preventDefault()
+    }
+
+    function btnlogin(e){
+        e.preventDefault()
+        setSignup((prevstate)=> !prevstate)
         
     }
+
+    const [signup, setSignup] = useState(false)
+
+    function btnsignup(e){
+        e.preventDefault()
+        
+        setSignup((prevstate)=> !prevstate)
+    }
+ 
+    const titleform = document.querySelector(".titleform")
+    const btnform = document.querySelector(".btnform")
+
+    const formsignup = signup === true ? { left:`80%`}: {};
+    const btntext =  signup === true ? `signup` : `login `
     
     return (
         <section className={Styles.container}>
@@ -20,7 +40,7 @@ function Login() {
                             acesse sua conta para entrar!
                         </p>
 
-                        <button>
+                        <button onClick={btnlogin}>
                             login
                         </button>
                     </div>
@@ -34,17 +54,17 @@ function Login() {
                             crie uma conta para entrar!
                         </p>
 
-                        <button>
-                            sign up
+                        <button  onClick={btnsignup}>
+                            signup
                         </button>
                     </div>
 
                 </div>
 
-                <form className={Styles.form}>
+                <form className={Styles.form } style={formsignup}>
                     <div className={Styles.boxcontentform}>
-                        <h2>
-                            login
+                        <h2 className='titleform'>
+                           {btntext}
                         </h2>
 
                         <div className={Styles.boxinput}>
@@ -61,7 +81,7 @@ function Login() {
                             <input type="password" id="password" />
                         </div>
 
-                        <button onClick={clickbutton} className={Styles.btnform}>login</button>
+                        <button onClick={clickbutton} className={Styles.btnform}>{btntext}</button>
                     </div>
                 </form>
             </div>
